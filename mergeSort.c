@@ -11,22 +11,24 @@ void merge(int A[], int lower1, int upper1, int lower2, int upper2)
 
     while (lower1 <= upper1 && lower2 <= upper2)
     {
-        if (A[lower1] < A[lower2])
-        {
-            Arr[i++] = A[lower1];
-            lower1++;
-        }
-        else if (A[lower1] > A[lower2])
-        {
-            Arr[i++] = A[lower2];
-            lower2++;
-        }
-        else
-        {
-            Arr[i++] = A[lower1];
-            Arr[i++] = A[lower2];
-        }
+        // if (A[lower1] < A[lower2])
+        // {
+        //     Arr[i++] = A[lower1];
+        //     lower1++;
+        // }
+        // else if (A[lower1] > A[lower2])
+        // {
+        //     Arr[i++] = A[lower2];
+        //     lower2++;
+        // }
+        // else
+        // {
+        //     Arr[i++] = A[lower1];
+        //     Arr[i++] = A[lower2];
+        // }
         // i++;
+
+        Arr[i++] = (A[lower1] < A[lower2]) ? A[lower1++] : A[lower2++];
     }
 
     while (lower1 <= upper1)

@@ -76,11 +76,11 @@ void mergeSort(int A[], int si, int ei)
 
 int main()
 {
-    int numbers[] = {4, 12, 9, 3};
+    int numbers[] = {4, 12, 9, 3, 3, 98, 54};
     int i;
-    mergeSort(numbers, 0, 3);
+    mergeSort(numbers, 0, 6);
 
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < 7; i++)
     {
         printf("%d ", numbers[i]);
     }

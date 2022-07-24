@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <limits.h>
 
+int cost = INT_MAX;
 int min(int A, int B)
 {
     return (A >= B ? A : B);
@@ -9,20 +10,30 @@ int min(int A, int B)
 
 int tsp(int size, int startVertex, bool visited[], int graph[][size])
 {
-    int cost = INT_MAX, i, temp;
+    int i, temp;
 
+    visited[startVertex] = true;
     for (i = 0; i < size; i++)
     {
         if (!visited[i])
         {
-            visited[i] = true;
+            // visited[i] = true;
             temp = graph[startVertex][i] + tsp(size, i, visited, graph);
-            if (temp < cost)
+            if (i == startVertex)
             {
-                cost = temp;
+                if (temp < cost)
+                {
+                    cost = temp;
+                }
+            }
+            else
+            {
+                cost = graph[startVertex][i];
             }
         }
     }
+
+    visited[startVertex] = false;
 
     return cost;
 }

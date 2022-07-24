@@ -56,7 +56,7 @@ int main()
     ary[1][2] = 2;
     ary[2][0] = 1;
     ary[2][1] = 2;
-    ary[2][1] = 0;
+    ary[2][2] = 0;
 
     int i;
     for (i = 0; i < n; i++)

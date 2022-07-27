@@ -6,26 +6,11 @@ using namespace std;
 vector<int> twoSum(vector<int> &nums, int target)
 {
     int size = nums.size();
+    int flag = 0;
     vector<int> ans;
-
-    sort(nums.begin(), nums.end());
-
-    for (int i = nums.size(); i > 0; i--)
+    for (int i = 0; i < size; i++)
     {
-        if (nums[i] <= target)
-        {
-            int rem = target - nums[i];
-            for (int j = i; j > 0; j--)
-            {
-                if (nums[j] == rem)
-                {
-                    ans.push_back(i);
-                    ans.push_back(j);
-                }
-            }
-        }
     }
-
     return ans;
 }
 
